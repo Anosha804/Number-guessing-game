@@ -1,4 +1,6 @@
+#! /usr/bin/env node
 import inquirer from "inquirer";
+import chalk from "chalk";
 const randomNumber = Math.floor(Math.random() * 10 + 1);
 const answer = await inquirer.prompt([
     {
@@ -8,8 +10,8 @@ const answer = await inquirer.prompt([
     },
 ]);
 if (answer.userGuessNumber) {
-    console.log("Congratulatons ! You guess a correct number.");
+    console.log(chalk.green.bold("Congratulatons ! You guess a correct number."));
 }
 else {
-    console.log("Sorry, You guess a wrong number.");
+    console.log(chalk.red.bold("Sorry, You guess a wrong number."));
 }
